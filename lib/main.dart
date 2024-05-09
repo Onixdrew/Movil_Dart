@@ -1,13 +1,30 @@
+// dependencias
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+// mis funciones
 import 'package:flutter_application_2/DatosPersonales.dart';
 import 'package:flutter_application_2/barraEstado.dart';
 import 'package:flutter_application_2/bodyContent.dart';
-// import 'package:flutter_application_2/bodyContent.dart';
+import 'package:flutter_application_2/controlador.dart';
 import 'package:flutter_application_2/menuHamburguesa.dart';
 
+
 void main(List<String> args) {
+  Get.put(Controlador());
   runApp(const Home());
 }
+
+
+// creo una instancia del controlador
+
+Controlador controladorBody = Get.find();
+
+
+
+
+
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -22,12 +39,20 @@ class _HomeState extends State<Home> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: barraEstado(), drawer: drawerP(), body: datosPersonales()),
+          appBar: barraEstado(), drawer: drawerP(), body: coleccioPaginas[2]),
     );
   }
 }
 
-List coleccioPaginas = [bodyContent(), datosPersonales()];
+///////////////////////
+
+List coleccioPaginas = [
+  bodyContent(),
+  datosPersonales(),
+  experienciaLaboral(),
+];
+
+// //////////////
 
 experienciaLaboral() {
   return ListView.builder(
@@ -35,6 +60,9 @@ experienciaLaboral() {
     itemBuilder: (BuildContext context, int index) {
       return ListTile(
         title: Text(datosLaborales[index]['empresa']),
+        subtitle: Text(datosLaborales[index]['puesto']),
+        leading: const Icon(Icons.arrow_circle_right),
+        onTap: () {},
       );
     },
   );
@@ -55,65 +83,65 @@ List datosLaborales = [
         'Diseño de logotipos, material publicitario y contenido para redes sociales.'
   },
   {
-    'empresa': 'Empresa A',
+    'empresa': 'Empresa C',
     'puesto': 'Desarrollador de Software',
     'periodo': 'Enero 2018 - Diciembre 2019',
     'funciones': 'Desarrollo de aplicaciones móviles y web.'
   },
   {
-    'empresa': 'Empresa B',
+    'empresa': 'Empresa D',
     'puesto': 'Diseñador Gráfico',
     'periodo': 'Marzo 2020 - Presente',
     'funciones':
         'Diseño de logotipos, material publicitario y contenido para redes sociales.'
   },
   {
-    'empresa': 'Empresa A',
+    'empresa': 'Empresa E',
     'puesto': 'Desarrollador de Software',
     'periodo': 'Enero 2018 - Diciembre 2019',
     'funciones': 'Desarrollo de aplicaciones móviles y web.'
   },
   {
-    'empresa': 'Empresa B',
+    'empresa': 'Empresa F',
     'puesto': 'Diseñador Gráfico',
     'periodo': 'Marzo 2020 - Presente',
     'funciones':
         'Diseño de logotipos, material publicitario y contenido para redes sociales.'
   },
   {
-    'empresa': 'Empresa A',
+    'empresa': 'Empresa G',
     'puesto': 'Desarrollador de Software',
     'periodo': 'Enero 2018 - Diciembre 2019',
     'funciones': 'Desarrollo de aplicaciones móviles y web.'
   },
   {
-    'empresa': 'Empresa B',
+    'empresa': 'Empresa H',
     'puesto': 'Diseñador Gráfico',
     'periodo': 'Marzo 2020 - Presente',
     'funciones':
         'Diseño de logotipos, material publicitario y contenido para redes sociales.'
   },
   {
-    'empresa': 'Empresa A',
+    'empresa': 'Empresa I',
     'puesto': 'Desarrollador de Software',
     'periodo': 'Enero 2018 - Diciembre 2019',
     'funciones': 'Desarrollo de aplicaciones móviles y web.'
   },
   {
-    'empresa': 'Empresa B',
+    'empresa': 'Empresa J',
     'puesto': 'Diseñador Gráfico',
     'periodo': 'Marzo 2020 - Presente',
     'funciones':
         'Diseño de logotipos, material publicitario y contenido para redes sociales.'
   },
   {
-    'empresa': 'Empresa A',
+    'empresa': 'Empresa K',
     'puesto': 'Desarrollador de Software',
     'periodo': 'Enero 2018 - Diciembre 2019',
     'funciones': 'Desarrollo de aplicaciones móviles y web.'
   },
   {
-    'empresa': 'Empresa B',
+    'empresa': 'Empresa M',
     'puesto': 'Diseñador Gráfico',
     'periodo': 'Marzo 2020 - Presente',
     'funciones':

@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
+import 'package:flutter_application_2/main.dart';
 
 drawerP() {
-  return const Drawer(
+  return Drawer(
     child: Column(
       children: [
         Image(
@@ -15,7 +16,16 @@ drawerP() {
         ListTile(
           title: Text("Datos personales"),
           leading: Icon(Icons.arrow_back_ios_new_outlined),
+          onTap: () {
+            controladorBody.combioTitulo("Datos personales");
+          },
         ),
+        ListTile(
+            title: Text("Referencias."),
+            leading: Icon(Icons.arrow_back_ios_new_outlined),
+            onTap: () {
+              controladorBody.combioTitulo("Referencias");
+            }),
         ListTile(
           title: Text("Acerca de."),
           leading: Icon(Icons.arrow_back_ios_new_outlined),
