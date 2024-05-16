@@ -39,7 +39,9 @@ class _HomeState extends State<Home> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: barraEstado(), drawer: drawerP(), body: coleccioPaginas[2]),
+          appBar: barraEstado(),
+          drawer: drawerP(),
+          body: Obx(()=> coleccioPaginas[controladorBody.cambioVista])),
     );
   }
 }
